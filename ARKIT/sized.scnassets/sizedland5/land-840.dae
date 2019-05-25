@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <authoring_tool>Shade 3D Professional ver.15.1.2 481153 | COLLADAExporter 1.9.5</authoring_tool>
+      <source_data>file:///Users/kazuosasaki/Dropbox/Kaz-Box/37-DEVELOPMENT/SHADE/SHADE20/02-SIZE-LAND05/SizedLand05.shd</source_data>
+    </contributor>
+    <created>2018-05-04T21:41:24</created>
+    <modified>2018-05-04T21:41:24</modified>
+    <title>land-840.dae</title>
+    <unit name="centimeter" meter="0.009999999776"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_geometries>
+    <geometry id="geom-1" name="閉じた線形状">
+      <mesh>
+        <source id="geom-1-positions">
+          <float_array id="geom-1-positions-array" count="12">-420 0 -420.0001 -420 0 420.0001 420 0 420.0001 420 0 -420.0001 </float_array>
+          <technique_common>
+            <accessor source="#geom-1-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-1-normals">
+          <float_array id="geom-1-normals-array" count="18">0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 </float_array>
+          <technique_common>
+            <accessor source="#geom-1-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-1-map0">
+          <float_array id="geom-1-map0-array" count="12">1 0 0 0 0 1 0 1 1 1 1 0 </float_array>
+          <technique_common>
+            <accessor source="#geom-1-map0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-1-vertices">
+          <input semantic="POSITION" source="#geom-1-positions"/>
+        </vertices>
+        <polygons material="MATERIAL2" count="2">
+          <input semantic="VERTEX" source="#geom-1-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-1-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-1-map0" offset="2" set="0"/>
+          <p>0 2 2 1 1 1 2 0 0 </p>
+          <p>2 5 5 3 4 4 0 3 3 </p>
+        </polygons>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_effects>
+    <effect id="Effect2">
+      <profile_COMMON id="Phong2">
+        <newparam sid="land-8402diffuse-surface">
+          <surface type="2D">
+            <init_from>land-8402diffuse</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="land-8402diffuse-sampler">
+          <sampler2D>
+            <source>land-8402diffuse-surface</source>
+            <minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
+            <magfilter>LINEAR</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="land-8402diffuse-sampler" texcoord="TEXCOORD0"/>
+            </diffuse>
+            <specular>
+              <color>0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float>6</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent>
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Material2" name="MATERIAL2">
+      <instance_effect url="#Effect2"/>
+    </material>
+  </library_materials>
+  <library_images>
+    <image id="land-8402diffuse" name="land-8402diffuse">
+      <init_from>land-8402diffuse.tif</init_from>
+    </image>
+  </library_images>
+  <library_cameras>
+    <camera id="Camera1" name="Camera1">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov>39.59775</xfov>
+            <yfov>26.99147</yfov>
+            <znear>0.099999964237</znear>
+            <zfar>1000</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+    </camera>
+  </library_cameras>
+  <library_lights>
+    <light id="Light1" name="Light1">
+      <technique_common>
+        <directional>
+          <color>1 1 1</color>
+        </directional>
+      </technique_common>
+    </light>
+  </library_lights>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node type="NODE">
+        <rotate>0 0 1 -11.32762</rotate>
+        <rotate>0 1 0 1.866583</rotate>
+        <rotate>1 0 0 -18.6561</rotate>
+        <instance_light url="#Light1"/>
+      </node>
+      <node type="NODE">
+        <translate>665.367 1317.491 946.8507</translate>
+        <rotate>0 0 1 11.54176</rotate>
+        <rotate>0 1 0 22.29867</rotate>
+        <rotate>1 0 0 -54.29605</rotate>
+        <instance_camera url="#Camera1"/>
+      </node>
+      <node id="SimplePart6" name="ルートパート" sid="SimplePart6" type="NODE">
+        <node id="SimplePart7" name="ground-100mm" sid="SimplePart7" type="NODE"/>
+        <node id="SimplePart8" name="ground-10mm" sid="SimplePart8" type="NODE"/>
+        <node id="SimplePart9" name="ground-12mm" sid="SimplePart9" type="NODE"/>
+        <node id="SimplePart10" name="ground-840" sid="SimplePart10" type="NODE">
+          <node type="NODE">
+            <instance_geometry url="#geom-1">
+              <bind_material>
+                <technique_common>
+                  <instance_material symbol="MATERIAL2" target="#Material2">
+                    <bind_vertex_input semantic="TEXCOORD0" input_semantic="TEXCOORD" input_set="0"/>
+                  </instance_material>
+                </technique_common>
+              </bind_material>
+            </instance_geometry>
+          </node>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
